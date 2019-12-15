@@ -1,6 +1,6 @@
 {
-  "short_name": "Hello React!",
-  "name": "Hello React!",
+  "short_name": "Tangent",
+  "name": "Tangent - Chat Application",
   "icons": [
     {
       "src": "favicon.ico",
