@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
-import UserList from "../../components/UserList";
+import Chat from "../ChatContainer";
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <h1>Hello React!</h1>
-      <UserList />
+      <h1>Tangent</h1>
+      <Chat />
     </div>
   );
 };
