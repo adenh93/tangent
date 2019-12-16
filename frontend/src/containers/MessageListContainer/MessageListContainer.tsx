@@ -1,7 +1,7 @@
 import React, { SFC } from "react";
 import MessageList from "../../components/MessageList";
 
-const ChatContainer: SFC = () => {
+const MessageListContainer: SFC = () => {
   const messages: Array<string> = [
     "Hi, how are you?",
     "I'm doing good.",
@@ -11,4 +11,4 @@ const ChatContainer: SFC = () => {
   return <MessageList messages={messages} />;
 };
 
-export default ChatContainer;
+export default MessageListContainer;
