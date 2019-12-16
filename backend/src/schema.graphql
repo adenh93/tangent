@@ -1,29 +1,16 @@
 type Query {
-  user(id: ID!): User
-  users: [User!]!
+  getMessages: [Message!]!
 }
 
 type Mutation {
-  createUser(data: CreateUserInput): User
-  updateUser(id: ID, data: UpdateUserInput): User
-  deleteUser(id: ID): User
+  sendMessage(message: String!): Message!
 }
 
-type User {
-  id: ID!
-  username: String!
-  email: String!
-  name: String!
+type Subscription {
+  message: Message!
 }
 
-input CreateUserInput {
-  username: String!
-  email: String!
-  name: String!
-}
-
-input UpdateUserInput {
-  username: String
-  email: String
-  name: String
+type Message {
+  content: String!
+  timestamp: String!
 }

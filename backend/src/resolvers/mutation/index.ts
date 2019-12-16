@@ -1,7 +1,7 @@
-import userMutation from "./userMutation";
+import messageMutation from "./message";
 
 const Mutation = {
-  ...userMutation
+  ...messageMutation
 };
 
 export default Mutation;

@@ -8,56 +8,28 @@ export type Scalars = {
   Float: number,
 };
 
-export type CreateUserInput = {
-  username: Scalars['String'],
-  email: Scalars['String'],
-  name: Scalars['String'],
+export type Message = {
+   __typename?: 'Message',
+  content: Scalars['String'],
+  timestamp: Scalars['String'],
 };
 
 export type Mutation = {
    __typename?: 'Mutation',
-  createUser?: Maybe<User>,
-  updateUser?: Maybe<User>,
-  deleteUser?: Maybe<User>,
+  sendMessage: Message,
 };
 
 
-export type MutationCreateUserArgs = {
-  data?: Maybe<CreateUserInput>
-};
-
-
-export type MutationUpdateUserArgs = {
-  id?: Maybe<Scalars['ID']>,
-  data?: Maybe<UpdateUserInput>
-};
-
-
-export type MutationDeleteUserArgs = {
-  id?: Maybe<Scalars['ID']>
+export type MutationSendMessageArgs = {
+  message: Scalars['String']
 };
 
 export type Query = {
    __typename?: 'Query',
-  user?: Maybe<User>,
-  users: Array<User>,
+  getMessages: Array<Message>,
 };
 
-
-export type QueryUserArgs = {
-  id: Scalars['ID']
-};
-
-export type UpdateUserInput = {
-  username?: Maybe<Scalars['String']>,
-  email?: Maybe<Scalars['String']>,
-  name?: Maybe<Scalars['String']>,
-};
-
-export type User = {
-   __typename?: 'User',
-  id: Scalars['ID'],
-  username: Scalars['String'],
-  email: Scalars['String'],
-  name: Scalars['String'],
+export type Subscription = {
+   __typename?: 'Subscription',
+  message: Message,
 };
