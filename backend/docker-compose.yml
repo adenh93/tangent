@@ -26,23 +26,27 @@ services:
 
   redis:
     image: redis
-    container_name: cache
     expose:
       - 6739
 
   app:
     build: ./
     volumes:
-      - ./app
+      - ./:/app
+    container_name: app
     ports:
       - 4000:4000
     links:
       - redis
       - prisma
+    depends_on:
+      - redis
+      - prisma
     environment:
       - NODE_ENV=development
       - PORT=4000
-      - REDIS_URL=redis://cache
+      - REDIS_HOST=redis
+    command: sh -c "npm i && npm start"
 
 volumes:
   mongo:

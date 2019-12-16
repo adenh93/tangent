@@ -1,5 +1,7 @@
-import { Prisma } from './generated/prisma-client'
+import { Prisma } from "./generated/prisma-client";
+import { RedisPubSub } from "graphql-redis-subscriptions";
 
 export interface Context {
-  prisma: Prisma
+  prisma: Prisma;
+  redis: RedisPubSub;
 }
