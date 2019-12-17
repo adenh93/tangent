@@ -1,14 +1,15 @@
 import React, { SFC } from "react";
-import Message from "../Message/Message";
+import MessageComponent from "../Message/Message";
+import { Message } from "../../types";
 
 interface Props {
-  messages: Array<string>;
+  messages: Array<Message>;
 }
 
 const MessageList: SFC<Props> = ({ messages }) => (
   <div>
     {messages.map((message, index) => (
-      <Message content={message} key={index} />
+      <MessageComponent {...message} key={index} />
     ))}
   </div>
 );

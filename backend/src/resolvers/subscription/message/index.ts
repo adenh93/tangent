@@ -1,7 +1,7 @@
-import message from "./message";
+import newMessage from "./message";
 
 const messageSubscription = {
-  message
+  newMessage
 };
 
 export default messageSubscription;

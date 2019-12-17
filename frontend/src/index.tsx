@@ -3,13 +3,8 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./pages/App";
 import * as serviceWorker from "./serviceWorker";
-
 import { ApolloProvider } from "react-apollo";
-import ApolloBoost from "apollo-boost";
-
-const client = new ApolloBoost({
-  uri: "http://localhost:4000"
-});
+import client from "./apolloClient";
 
 ReactDOM.render(
   <ApolloProvider client={client}>

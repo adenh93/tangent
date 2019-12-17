@@ -11,7 +11,7 @@ const sendMessage = (
     timestamp: new Date().toDateString()
   };
 
-  redis.publish("messages", { message: payload });
+  redis.publish("messages", { newMessage: payload });
 
   return payload;
 };

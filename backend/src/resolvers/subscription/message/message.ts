@@ -1,8 +1,8 @@
 import { Context } from "../../../utils";
 
-const comment = {
+const newMessage = {
   subscribe: (parent, args, { redis }: Context) =>
     redis.asyncIterator("messages")
 };
 
-export default comment;
+export default newMessage;

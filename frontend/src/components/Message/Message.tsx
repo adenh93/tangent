@@ -1,12 +1,15 @@
 import React, { SFC } from "react";
 
 interface Props {
+  timestamp: string;
   content: string;
 }
 
-const Message: SFC<Props> = ({ content }) => (
+const Message: SFC<Props> = ({ timestamp, content }) => (
   <div>
-    <p>{content}</p>
+    <p>
+      {timestamp} - {content}
+    </p>
   </div>
 );
 

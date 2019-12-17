@@ -31,5 +31,5 @@ export type Query = {
 
 export type Subscription = {
    __typename?: 'Subscription',
-  message: Message,
+  newMessage: Message,
 };
