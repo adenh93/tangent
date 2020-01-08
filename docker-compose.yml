@@ -29,11 +29,21 @@ services:
     expose:
       - 6739
 
-  app:
-    build: ./
+  frontend:
+    build: ./frontend
     volumes:
-      - ./:/app
-    container_name: app
+      - ./frontend:/usr/src/app
+    container_name: frontend
+    depends_on:
+      - backend
+    ports:
+      - 3000:3000
+
+  backend:
+    build: ./backend
+    volumes:
+      - ./backend:/usr/src/app
+    container_name: backend
     ports:
       - 4000:4000
     links:
@@ -46,7 +56,6 @@ services:
       - NODE_ENV=development
       - PORT=4000
       - REDIS_HOST=redis
-    command: sh -c "npm i && npm start"
 
 volumes:
   mongo:
